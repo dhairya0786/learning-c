@@ -1,27 +1,22 @@
 #include <stdio.h>
 
+
+void print_row(int bricks) {
+    for (int i = 0; i < bricks; i++) {
+        printf("#");
+    }
+    printf("\n");
+}
+
 int main() {
-    
-   int cents;
+    int height;
 
-   do {
-      printf("Change owed: ");
-      scanf("%d", &cents);
-   } while (cents < 0);
+    do {
+        printf("Height: ");
+        scanf("%d", &height);
+    } while (height < 0);
 
-    int coins = 0;
-
-    coins += cents / 25;
-    cents = cents % 25;
-
-    coins += cents / 10;
-    cents = cents % 10;
-
-    coins += cents / 5;
-    cents = cents % 5;
-
-    coins += cents / 1;
-    cents = cents % 1;
-
-    printf("Number of coins needed: %d\n", coins);
+    for (int i = 1; i <= height; i++) {
+        print_row(i);
+    }
 }
