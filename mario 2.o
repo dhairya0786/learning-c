@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int height;
+    
+    // get valid height from user
+    do
+    {
+        height = get_int("Height: ");
+    }
+    while (height < 1 || height > 8);
+
+    // loop through each row
+    for (int i = 1; i <= height; i++)
+    {
+        // print spaces
+        for (int j = 0; j < height - i; j++)
+        {
+            printf(" ");
+        }
+
+        // print left hashes
+        for (int j = 0; j < i; j++)
+        {
+            printf("#");
+        }
+
+        // print middle gap
+        printf("  ");
+
+        // print right hashes
+        for (int j = 0; j < i; j++)
+        {
+            printf("#");
+        }
+
+        // new line
+        printf("\n");
+    }
+}
+
